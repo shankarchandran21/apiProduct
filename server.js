@@ -4,12 +4,15 @@ import cors from 'cors';
 import dotenv from 'dotenv'
 import productRoute from './Router/productRoute.js'
 import userRouter from './Router/userRouter.js'
+
 dotenv.config()
 const PORT = process.env.PORT 
 const CONNECTION_URL = process.env.CONNECTION_URL
 const app = express()
 
 
+
+app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cors())

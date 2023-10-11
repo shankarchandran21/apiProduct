@@ -1,5 +1,5 @@
 import mongoose  from 'mongoose'
-
+import { productSchema } from './product.js'
 
 const adminSchema = mongoose.Schema({
    name:{
@@ -11,7 +11,7 @@ const adminSchema = mongoose.Schema({
     },roll:{
         type:'string',
         require:true,
-    }
+    },products:[String]
 })
 
 const Admin = mongoose.model('admin',adminSchema)
