@@ -10,6 +10,12 @@ const PORT = process.env.PORT
 const CONNECTION_URL = process.env.CONNECTION_URL
 const app = express()
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:5174');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 
 app.use(express.static('public'))
